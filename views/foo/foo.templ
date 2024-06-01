@@ -1,1 +1,14 @@
 package foo
+
+import (
+    "github.com/jun-hf/goui/views/layouts"
+)
+
+templ Foo() {
+    @layouts.Base() {
+        <div>
+            Hello World
+            <img src="/public/stock.png"/>
+        </div>
+    }
+}

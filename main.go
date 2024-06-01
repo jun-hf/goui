@@ -21,6 +21,7 @@ func main() {
 		log.Fatal("PLEASE provide listenAddr in .env")
 	}
 	router := chi.NewMux()
+	router.Handle("/*", public())
 	router.Get("/foo", handlers.Make(handlers.HandlerFoo))
 
 	slog.Info("HTTP server started", "listenAddr", listenAddr)

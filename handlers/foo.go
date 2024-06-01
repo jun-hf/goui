@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	"errors"
 	"net/http"
+
+	"github.com/jun-hf/goui/views/foo"
 )
 
 func HandlerFoo(w http.ResponseWriter, r *http.Request) error {
-	w.Write([]byte("FOO"))
-	return errors.New("foo error")
+	return Render(w, r, foo.Foo())
 }
