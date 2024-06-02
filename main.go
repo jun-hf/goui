@@ -22,7 +22,7 @@ func main() {
 	}
 	router := chi.NewMux()
 	router.Handle("/*", public())
-	router.Get("/foo", handlers.Make(handlers.HandlerHome))
+	router.Get("/", handlers.Make(handlers.HandlerHome))
 
 	slog.Info("HTTP server started", "listenAddr", listenAddr)
 	http.ListenAndServe(listenAddr, router)

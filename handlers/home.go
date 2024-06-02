@@ -7,5 +7,7 @@ import (
 )
 
 func HandlerHome(w http.ResponseWriter, r *http.Request) error {
-	return Render(w, r, home.Home())
+	var a = make(map[string]bool)
+	a["hell"] = true
+	return Render(w, r, home.Home(a))
 }

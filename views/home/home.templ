@@ -2,14 +2,21 @@ package home
 
 import (
     "github.com/jun-hf/goui/views/layouts"
+	"github.com/jun-hf/goui/views/cardExample"
 )
 
-templ Home() {
+templ Home(class map[string]bool) {
     @layouts.Base() {
         <div class="flex flex-col items-center">
             <div class="text-xl text-blue-500 font-bold">
                 Hello World
             </div>
+            @CardDescription(class)
+            @cardExample.CardWithForm()
         </div>
     }
+}
+var classList = []string{"jis", `>j"disjd`}
+templ CardDescription(class map[string]bool) {
+    <div class={"text-sm", class, classList}>Hello</div>
 }

@@ -2,29 +2,31 @@ package card
 
 templ Card(class []string) {
     <div class={"rounded-lg", "border", "bg-card", "text-card-foreground", "shadow-sm", class}>
-
+        { children... }
     </div>
 }
 templ CardHeader(class []string) {
     <div class={"flex", "flex-col", "space-y-1.5", "p-6", class}>
-
+        { children... }
     </div>
 }
-templ CardTitle(class []string) {
+templ CardTitle(title string, class []string) {
     <div class={"text-2xl", "font-semibold", "leading-none", "tracking-tight", class}>
+        { title }
     </div>
 }
-templ CardDescription(class []string) {
+templ CardDescription(description string, class []string) {
     <p class={"text-sm", "text-muted-foreground", class}>
+        { description }
     </p>
 }
 templ CardContent(class []string) {
     <div class={"p-6", "pt-0", class}>
-        
+        { children... }
     </div>
 }
 templ CardFooter(class []string) {
     <div class={"flex", "items-center", "p-6", "pt-0", class}>
-    
+        { children... }
     </div>
 }
